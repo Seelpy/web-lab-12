@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>laba10</title>
+  <link href="static/css/style-admin.css" rel="stylesheet" type="text/css">
+  <link href="static/css/style-preview.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <link href="./static/css/style-message-info.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo-text" href="/home">Escape.<span class="logo-subtext">author</span></a>
+    <div class="user-field">
+      <div class="avatar-letter">
+        N
+      </div>
+      <div id="logout" class="log-out-img">
+        <img src="/static/img/log-out.svg" alt="log-out">
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__form">
+      <div class="form-head">
+        <div>
+          <h2 class="title">New Post</h2>
+          <p class="subtitle">Fill out the form bellow and publish your article</p>
+        </div>
+        <button id="publish" class="button-publish">Publish</button>
+      </div>
+      <div id="message-box" class="message-box hidden message-box_full_suze">
+        <div class="message">
+            <img class="alert-circle" src="/static/img/alert-circle.png">
+            <span id="message-text" class="message-text" >Whoops! Some fields need your attention :o</span>
+        </div>
+      </div>  
+      <div id="message-box-success" class="message-box hidden message-box_full_suze message-box_success ">
+        <div class="message">
+            <img class="alert-circle" src="/static/img/check-circle.png">
+            <span id="message-text" class="message-text" >Publish Complete!</span>
+        </div>
+      </div>
+    </div>
+      <div class="form">
+        <p class="form__name">Main Information</p>
+        <div class="form__blocks">
+          <div>
+            <div class="field">
+              <p class="field__name">Title</p>
+              <input id="input-title" name="title" class="filed__input-text" placeholder="New Post" >
+              <p id="comment-title" class="comment hidden">Password is required.</p>
+            </div>
+            <div class="field">
+              <p class="field__name">Short description</p>
+              <input id="input-descpription" name="description" class="filed__input-text"
+                placeholder="Please, enter any description" >
+              <p id="comment-description" class="comment hidden">Password is required.</p>
+            </div>
+            <div class="field">
+              <p class="field__name">Author name</p>
+              <input id="input-name" name="author" class="filed__input-text"  placeholder=" ">
+              <p id="comment-author-name" class="comment hidden">Password is required.</p>
+            </div>
+            <div class="field">
+              <p class="field__name">Author Photo</p>
+              <div class="author-photo-filed">
+                <label class="form__author-photo">
+                  <input id="author-photo-input" class="file__input-photo" accept="image/*" name="avatarImg" type="file">
+                  <div class="form__author-photo_img">
+                    <img id="author-photo" class="author-img">
+                  </div>
+                </label>
+                <p id="upload-text-author-photo" class="photo-upload">Upload</p>
+                  <label for="author-photo-input">
+                    <div id="upload-author-photo" class="hidden">
+                      <img src="/static/img/camera.svg" alt="upload new" id="form__article-image-upload-new"/>
+                      <p  id="upload-author-photo" class="photo-upload-new">Upload New</p>
+                    </div>
+                  </label>
+                  <div id="remove-author-photo" class="hidden">
+                    <img src="/static/img/trash-2.svg" alt="remove"/>
+                    <p class="photo-remove">Remove</p>
+                  </div>
+              </div>
+              <p id="comment-author-photo" class="comment hidden">Password is required.</p>
+            </div>
+            <div class="field">
+              <p class="field__name">Publish Date</p>
+              <input id="input-date" name="date" class="filed__input-text" type="date" >
+              <p id="comment-date" class="comment hidden">Password is required.</p>
+            </div>
+            <div class="field-photo">
+              <p class="field__name">Hero Image</p>
+              <label id="card-photo-big" class="photo-selector photo-selector-big_size">
+                <input id="card-photo-input-big" type="file" accept="image/*" >
+                <img class="form__hero-img" src="./static/img/camera.svg">
+                <p class="photo-upload">Upload</p>
+              </label>
+              <p id="comment1" class="subname__font">Size up to 10mb. Format: png, jpeg, gif.</p>
+              <div class="form__image-control">
+                <label for="card-photo-input-big">
+                  <div id="upload-hero-image" class="hidden">
+                    <img id="card-photo" src="/static/img/camera.svg" alt="upload new" id="form__article-image-upload-new"/>
+                    <p class="photo-upload-new">Upload New</p>
+                  </div>
+                </label>
+                <div id="remove-hero-image" class="hidden">
+                  <img src="/static/img/trash-2.svg" alt="remove" id="form__article-image-remove"/>
+                  <p class="photo-remove">Remove</p>
+                </div>
+              </div>
+              <p id="comment-img-hero-big" class="comment hidden">Password is required.</p>
+            </div>
+            <div class="field-photo">
+              <p class="field__name">Hero Image</p>
+              <label id="card-photo-small" class="photo-selector photo-selector-little_size">
+                <input id="card-photo-input-small" type="file" accept="image/*">
+                <img class="form__hero-img" src="/static/img/camera.svg">
+                <p class="photo-upload">Upload</p>
+              </label>
+              <p id="comment2" class="subname__font">Size up to 5mb. Format: png, jpeg, gif.</p>
+              <div class="form__image-control">
+                <label for="card-photo-input-small">
+                  <div id="upload-hero-image-small" class="hidden">
+                    <img src="/static/img/camera.svg" alt="upload new" id="form__article-image-upload-new"/>
+                    <p class="photo-upload-new">Upload New</p>
+                  </div>
+                </label>
+                <div id="remove-hero-image-small" class="hidden">
+                  <img src="/static/img/trash-2.svg" alt="remove" id="form__article-image-remove"/>
+                  <p class="photo-remove">Remove</p>
+                </div>
+              </div>
+              <p id="comment-img-hero-small" class="comment hidden">Password is required.</p>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="preview__article">
+              <p class="field__name">Article preview</p>
+              <div class="box-show__border">
+                <div class="box-show__border-deep">
+                  <div class="box-show__border-deep_header">
+                    <div class="box-show__border-deep_cicle"></div>
+                    <div class="box-show__border-deep_cicle"></div>
+                    <div class="box-show__border-deep_cicle"></div>
+                  </div>
+                  <p id="box-title" class="box-show__title">New Post</p>
+                  <p id="box-description" class="box-show__subtitle">Please, enter any description</p>
+                  <div id="box-image" class="box-show__img"></div>
+                </div>
+                <div class="box-show__shadow_right"></div>
+                <div class="box-show__shadow_bot"></div>
+              </div>
+            </div>
+            <div class="preview__card">
+              <p class="field__name">Post card preview</p>
+              <div class="box-show__border">
+                <div class="box-show__card">
+                  <div id="box-image-card" class="box-show__card_img"></div>
+                  <div id="box-title-card" class="box-show__card_title">New Post</div>
+                  <div id="box-description-card" class="box-show__card_subtitle">
+                    Please, enter any description
+                  </div>
+                  <div class="box-show__card_author-data">
+                    <div class="box-show__card_author">
+                      <img id="box-author-img-card" class="box-show__card_author-img" src="/static/img/card-preview-author.png">
+                      <p id="box-author-name-card">Enter author name</p>
+                    </div>
+                    <p id="box-date-card">4/19/2023</p>
+                  </div>
+                  <div class="box-show-card__shadow_right"></div>
+                  <div class="box-show-card__shadow_bot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <p class="form__name">Content</p>
+        <p class="field__name">Post content (plain text)</p>
+        <label>
+          <div>
+            <textarea id="content" name="content" class="content__text_value" placeholder="Type anything you want ..."
+              ></textarea>
+            <p id="comment-content" class="comment hidden">Password is required.</p>
+          </div>
+        </label>
+      </div>
+    </div>
+  </main>
+  <script src="static/js/admin.js"></script>
+</body>
+</html>

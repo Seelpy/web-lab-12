@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-article.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+	</head>
+  <body class="page">
+    <header class="header">
+      <div class="header__links">
+        <a href="/" class="logo-text logo-text_black">Escape.</a>
+        <nav class="navigation header__navigation">
+          <a href="#" class="navigation__link navigation__link_uppercase navigation__link_black">Home</a>
+          <a href="#" class="navigation__link navigation__link_uppercase navigation__link_black">Categories</a>
+          <a href="#" class="navigation__link navigation__link_uppercase navigation__link_black">About</a>
+          <a href="#" class="navigation__link navigation__link_uppercase navigation__link_black">Contact</a>
+        </nav>
+      </div>
+    <h1 class="main__title">{{ .Title }}</h1>
+	  <p class="main__subtitle">{{ .Subtitle }}</p>
+  </header>
+		<main class="content">
+      <img class="articel__image" src="/{{ .Img }}" alt="{{ .ImgAlt }}">
+			{{ range .Paragraphs}}
+          <p class="content__paragraph">{{.}}</p>
+      {{end}}
+		</main>
+		<footer class="footer">
+      <h2 class="heading footer__title-text">Stay in Touch</h2>
+      <form class="footer__form">
+        <input class="footer__form-text" type="text" placeholder="Enter your email address">
+        <input class="footer__form-submit" type="submit" placeholder="Submit" value="Subimt">
+      </form>
+      <div class="footer__links">
+        <span class="logo-text">Escape.</span>
+        <nav class="navigation footer__navigation">
+          <a href="#" class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">Home</a>
+          <a href="#" class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">Categories</a>
+          <a href="#" class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">About</a>
+          <a href="#" class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+.field__input_red_underline{
+    border-bottom: 1px solid #E86961;
+}
+
+.comment{
+    font: 400 normal 12px/16px 'Oxygen';
+    padding-top: 2px;
+}
+
+.comment_red{
+    color: #E86961;
+}
+
+.comment_gray{
+    color: #999999;
+}
+
+.message-box {
+    gap: 10px;
+    margin: 40px 40px 0px 40px;
+    height: 40px;
+    background-color: #FFEBEA;
+    border-left: 2px solid #E86961;
+    border-radius: 5px;
+}
+
+.message-box_full_suze {
+    margin: 40px 0px 0px 0px;
+}
+
+.message-box_success{
+    border-left: 2px solid #67C48C;
+    background-color: #E6FCEF;
+}
+
+.message-box-animation{
+    animation-duration: .3s;
+    animation-name: massage;
+}
+
+@keyframes massage
+{
+    from
+    {
+        height: 5px;
+    }
+    to
+    {
+        height: 40px;
+    }
+}
+
+.message{
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.alert-circle {
+    padding-left: 14px;
+}
+
+.message-text{
+    font: 400 normal 14px/20px 'Oxygen';
+    color: #2E2E2E;
+}

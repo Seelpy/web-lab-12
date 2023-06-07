@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lab10</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet" />
+    <link href="./static/css/style-log-in.css" rel="stylesheet" type="text/css"/>
+    <link href="./static/css/style-message-info.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="content">
+    <div class="title">
+        <p class="logo-text">Escape.<span class="logo-subtext">author</span></p>
+        <p class="subtitle">Log in to start creating</p>
+    </div>
+    <div class="login">
+        <div class="name">
+            <p class="login__name">Log In</p>
+        </div>
+        <div id="message-box" class="message-box  hidden">
+            <div class="message">
+                <img class="alert-circle" src="/static/img/alert-circle.png">
+                <span id="message-text" class="message-text" >Email or password is incorrect</span>
+            </div>
+        </div>
+        <div class="fields">
+            <div class="field">
+                <p class="field__name">Email</p>
+                <input id="email-field" class="field__input" placeholder=" ">
+                <p id="comment-email" class="comment hidden">Incorrect email format. Correct format is ****@**.***</p>
+            </div>
+            <div class="field">
+                <p class="field__name">Password</p>
+                <div class="password">
+                    <input id="password-field" class="field__input" id="password-field" type="password" placeholder=" ">
+                    <img class="password__eye" id="password-eye" src="./static/img/eye.svg">
+                </div>
+                <p id="comment-password" class="comment hidden">Password is required.</p>
+            </div>
+        </div>
+        <input id="submit"  class="submit" type="submit" value="Log In">
+    </div>
+    <script src="static/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.content__paragraph {
+    font: normal 400 24px/35px "Oxygen", sans-serif;
+    color: #101315;
+    margin: 1% 10%;
+}
+
+
+.content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__title {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 51px;
+    text-align: center;
+    padding-top: 110px;
+    color: #2E2E2E;
+}
+
+.main__subtitle {
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 113px;
+    color: rgba(46, 46, 46, 0.63);
+}
+
+.articel__image{
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 534px;
+}

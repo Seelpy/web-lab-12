@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet" />
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+  <link href="/static/css/style-index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="page">
+  <header class="header header_backgroud_grand-canyon">
+    <div class="header__links">
+      <a href="/" class="logo-text logo-text_white">Escape.</a>
+      <nav class="navigation header__navigation">
+        <a href="#" class="navigation__link navigation__link_uppercase navigation__link_white">Home</a>
+        <a href="#" class="navigation__link navigation__link_uppercase navigation__link_white">Categories</a>
+        <a href="#" class="navigation__link navigation__link_uppercase navigation__link_white">About</a>
+        <a href="#" class="navigation__link navigation__link_uppercase navigation__link_white">Contact</a>
+      </nav>
+    </div>
+    <div class="title header__title">
+      <h1 class="heading title__heading heading_size_big">Let`s do it together</h1>
+      <p class="text title__text">We travel the world om search of stories. Come along for the ride</p>
+    </div>
+    <div class="header__button">
+      <button class="button-text">View Latest Posts</button>
+    </div>
+  </header>
+  <main class="main main_backround_color">
+    <nav class="navigation main__navigation">
+      <a href="#" class="main__link navigation__link_color_grey">Nature</a>
+      <a href="#" class="main__link main__link_color_grey">Photography</a>
+      <a href="#" class="main__link main__link_color_grey">Relaxation</a>
+      <a href="#" class="main__link main__link_color_grey">Vacation</a>
+      <a href="#" class="main__link main__link_color_grey">Travel</a>
+      <a href="#" class="main__link main__link_color_grey">Adventure</a>
+    </nav>
+    <h2 class="heading main__title-text heading_size_medium">Futered Posts</h2>
+    <section class="futered-post futered-post_backround">
+      {{ range.FeaturedPosts }}
+      <div class="card large-card {{ .ImgModifier }}">
+        <a href="post/{{ .PostId }}/{{ .URLTitle }}" class="large-card__link  link_padding-without-button">{{ .Title }}</a>
+        <p class="large-card__info">{{ .Subtitle }}</p>
+        <div class="card__autor-info">
+          <div class="card__left-info">
+            <img class="large-card__image" src="{{ .AuthorImg }}" alt="{{ .Author }}">
+            <span class="large-card__name">{{ .Author }}</span>
+          </div>
+          <span class="large-card__date">{{ .PublishDate }}</span>
+        </div>
+      </div>
+      {{ end }}
+    </section>
+    <h2 class="heading main__title-text heading_size_medium">Most Recent</h2>
+    <section class="most-recrent most-recrent_backround">
+      {{ range.MostRecentPosts }}
+      <div class="small-card">
+        <div class="small-card__top-info">
+          <img class="small-card_image_size" src="{{ .Img }}" alt="{{ .ImgAlt }}">
+          <a href="post/{{ .PostId }}/{{ .URLTitle }}" class="small-card__link">{{ .Title }}</a>
+          <p class="small-card__info">{{ .Subtitle }}</p>
+        </div>
+        <div class="card__autor-info card__autor-info_backround">
+          <div class="card__left-info">
+            <img class="small-card__image" src="{{ .AuthorImg }}" alt="{{ .Author }}">
+            <span class="small-card__name">{{ .Author }}</span>
+          </div>
+          <span class="small-card__date">{{ .PublishDate }}</span>
+        </div>
+      </div>
+      {{ end }}
+    </section>
+  </main>
+  <footer class="footer">
+    <h2 class="heading footer__title-text">Stay in Touch</h2>
+    <form class="footer__form">
+      <input class="footer__form-text" type="text" placeholder="Enter your email address">
+      <input class="footer__form-submit" type="submit" placeholder="Submit" value="Subimt">
+    </form>
+    <div class="footer__links">
+      <span class="logo-text">Escape.</span>
+      <nav class="navigation footer__navigation">
+        <a href="#"
+          class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">Home</a>
+        <a href="#"
+          class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">Categories</a>
+        <a href="#"
+          class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">About</a>
+        <a href="#"
+          class="navigation__link footer__link navigation__link_uppercase navigation__link_color_white">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>
